@@ -5,7 +5,7 @@ const db = new sqlite.Database('./tasks.db')
 db.serialize(() => {
     db.run(`CREATE CREATE TABLE IF NOT EXISTS tasks (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
+        task TEXT NOT NULL,
         completed BOOLEAN DEFAULT 0
     `);
 });
