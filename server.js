@@ -19,9 +19,9 @@ app.use(express.json())
 // // req -> represent http request and has properties and methods
 // //Routes:
 // // Defines a route for the root URL /. When a GET request is made to /, the server responds with 'Hello, World!'.
-// app.get('/home', (req,res) => {
-//     res.send('Hello, Minnu!');
-// });
+app.get('/', (req,res) => {
+    res.send('Hello, Minnu!');
+});
 
 // Define CRUD routes
 // 1. POST route to create a new task - add a new task to database or update exisitn task. We send our request though th body isntead of url
