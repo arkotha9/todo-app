@@ -49,8 +49,8 @@ app.get('/tasks', (req, res) => {
 // 3. PUT route to update a task
 app.put('/tasks/:id', (req,res) => {
     const {id} = req.params;
-    const {task} = req.body;
-    db.run('UPDATE tasks SET task = ? WHERE id = ?', [task, id], (err) => {
+    const {task, completed} = req.body;
+    db.run('UPDATE tasks SET task = ?, completed = ? WHERE id = ?', [task, completed, id], (err) => {
         if(err){
             return res.status(500).json({error: 'Internal Server Error to update task'});
         }
